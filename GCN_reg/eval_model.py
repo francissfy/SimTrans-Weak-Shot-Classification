@@ -62,7 +62,8 @@ class Net(nn.Module):
         x = self.backbone.layer2(x)
         x = self.backbone.layer3(x)
         x = self.backbone.layer4(x)
-        x = self.backbone.avgpool(x)
+        # x = self.backbone.avgpool(x)
+        x = F.avg_pool2d(x, kernel_size=7, stride=1, padding=0)
         x = x.view(x.size(0), -1)
         feat = x
         x = self.backbone.fc(x)
