@@ -1,1 +1,4 @@
-python ad_similarity/GAN_noise_detection.py --data_path ../dataset/CUB --save_dir saves/h4f2_86.5 --similarity_net pretrained/CUB/step1/h4f2_86.5.pth
+CUDA_VISIBLE_DEVICES=1,2,3 python ad_similarity/GAN_noise_detection.py \
+    --data_path ./dataset/CUB \
+    --save_dir ./saves/resnet_exps/step2 \
+    --similarity_net ./saves/resnet_exps/step1/simnet.pth

@@ -1,1 +1,11 @@
-python ad_similarity/train_GAN_similarity.py --beta 0. --lr 5e-3 --domain_lr 5e-3 --batch_size 50 --lr_interval 25 --num_epoch 50 --head_type 4 --batch_class_num_B 2
+CUDA_VISIBLE_DEVICES=1,2,3 python ad_similarity/train_GAN_similarity.py \
+        --beta 0. \
+        --lr 5e-3 \
+        --domain_lr 5e-3 \
+        --batch_size 50 \
+        --lr_interval 25 \
+        --num_epoch 50 \
+        --head_type 4 \
+        --batch_class_num_B 2 \
+        --similarity_pretrained ./saves/resnet_exps/step0/resnet.pth \
+        --data_path ./dataset/CUB
