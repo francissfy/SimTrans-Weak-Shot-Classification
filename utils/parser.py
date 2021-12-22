@@ -37,4 +37,6 @@ def add_base_train(parser):
     parser.add_argument('--num_epoch', default=60, type=int)
     parser.add_argument('--imagenet_pretrained', default=1, type=int)
 
+    parser.add_argument('--use_transformer', default=1, type=int)
+
     return parser

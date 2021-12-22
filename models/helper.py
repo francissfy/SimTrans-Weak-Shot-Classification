@@ -1,9 +1,14 @@
 import torch
 from torchvision import models
 import torch.nn as nn
+from transformer.baseline_layers import TransformerEncoder
 
 
 def get_model(args, num_classes, resume=None):
+    if args.use_transformer:
+        model = TransformerEncoder(hidden_size=224)
+        return model
+
     if args.imagenet_pretrained:
         print('use image net pretrained')
         model = eval(f'models.{args.backbone}')(pretrained=True)
